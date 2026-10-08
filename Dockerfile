@@ -15,4 +15,7 @@ RUN npm ci --workspace packages/server --omit=dev
 COPY --from=build /app/packages/server/dist packages/server/dist
 COPY packages/server/db packages/server/db
 EXPOSE 4000
-CMD ["node", "packages/server/dist/index.js"]
+# Migrations run against whatever DATABASE_URL the platform injects, from
+# inside the platform's own network, before the server starts accepting
+# traffic -- avoids needing a developer laptop to have direct DB access.
+CMD ["sh", "-c", "node packages/server/dist/db/migrate.js && node packages/server/dist/index.js"]

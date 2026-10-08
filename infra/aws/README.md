@@ -25,9 +25,9 @@ terraform apply ...same vars...
 ```
 
 You need an image pushed to ECR (or another registry ECS can pull from)
-first — `packages/server/Dockerfile` builds it. After `apply`, run
-`npm run migrate` against the new RDS instance once (from a box that can
-reach it, or a one-off ECS task) before the service will serve real traffic.
+first — `Dockerfile` builds it. The container runs migrations against
+`DATABASE_URL` on startup, before it starts accepting traffic (see the
+Dockerfile's `CMD`), so no separate migration step is needed after `apply`.
 
 ## tfsec findings, and why they're left as-is for this scope
 
