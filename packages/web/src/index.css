@@ -1,0 +1,217 @@
+:root {
+  --bg: #0f1216;
+  --panel: #171b21;
+  --panel-2: #1f242c;
+  --border: #2a303a;
+  --text: #e6e9ef;
+  --muted: #9aa4b2;
+  --accent: #5b8cff;
+  --danger: #e5584d;
+  font-family: -apple-system, system-ui, Segoe UI, Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+a {
+  color: var(--accent);
+}
+
+.centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.auth-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.auth-card {
+  width: 320px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.auth-card h1 {
+  font-size: 1.1rem;
+  margin: 0 0 16px;
+}
+
+.field {
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field label {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+input,
+textarea {
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 10px;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+button.secondary {
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.error-banner {
+  background: rgba(229, 88, 77, 0.15);
+  border: 1px solid var(--danger);
+  color: #ffb3ad;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.topbar h1 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.project-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  display: block;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.project-card .key {
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.new-project-form {
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.board {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+}
+
+.column {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px;
+  width: 260px;
+  flex-shrink: 0;
+  min-height: 200px;
+}
+
+.column-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.ticket-card {
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+  cursor: grab;
+  font-size: 0.85rem;
+}
+
+.ticket-card .points {
+  float: right;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.add-ticket {
+  width: 100%;
+  background: transparent;
+  border: 1px dashed var(--border);
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.sprint-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.chart-panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 16px;
+}
