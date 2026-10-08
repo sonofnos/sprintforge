@@ -6,9 +6,12 @@ it tracks: the repo itself ships with a [CONTRIBUTING.md](CONTRIBUTING.md)
 covering the Agile/code-review/mentoring process, and a
 [CHANGELOG.md](CHANGELOG.md) kept by sprint instead of by date.
 
-**Live demo:** <!-- SPRINTFORGE_LIVE_URL --> (Render API + Postgres, Vercel
-frontend — see [Deployment](#deployment) for why, and `infra/aws/` for the
-same architecture as validated-but-unapplied Terraform for AWS.)
+**Live demo:** <https://sprintforge-three.vercel.app> (frontend, Vercel) ·
+API at <https://sprintforge-api-bl89.onrender.com> (Render, Postgres on
+Neon — see [Deployment](#deployment) for why, and `infra/aws/` for the same
+architecture as validated-but-unapplied Terraform for AWS). Render's free
+plan sleeps after inactivity, so the first request after a while can take
+up to ~a minute.
 
 ## What it does
 
@@ -94,7 +97,7 @@ See `infra/aws/README.md` for exactly what that means and what a real
 
 ## Project layout
 
-```
+```text
 packages/server/   Express API, Kysely + Postgres, Socket.IO, tests
 packages/web/       React frontend
 docs/adr/           Architecture decision records
